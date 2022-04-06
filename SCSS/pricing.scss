@@ -1,0 +1,400 @@
+$FullSliderBar: hsl(174, 77%, 80%);
+$SliderBackround: hsl(174, 86%, 45%);
+$DiscountBackground: hsl(14, 92%, 95%);
+$DiscountText: hsl(15, 100%, 70%);
+$PaleBlueCTAText: hsl(226, 100%, 87%);
+
+$PricingComponentBackground: #fff;
+$MainBackground: hsl(230, 100%, 99%);
+$EmptySliderBar: hsl(224, 65%, 95%);
+$ToggleBackground: hsl(223, 50%, 87%);
+$Text: hsl(225, 20%, 60%);
+$DarkDesaturatedBlueTextCTABackground: hsl(227, 35%, 25%);
+
+$left: 50%;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body {
+  background: url(/images/bg-pattern.svg) no-repeat;
+}
+
+form {
+  --left: 50;
+}
+
+.main-container {
+  display: grid;
+  place-content: center;
+  padding: 5em 1em;
+  text-align: center;
+  background-image: url(/images/pattern-circles.svg);
+  background-repeat: no-repeat;
+  background-position: center 50px;
+  
+
+  header {
+    min-height: 30vh;
+
+    h1 {
+      padding: 0 0 1em;
+      font-size: 28px;
+    }
+
+    p {
+      padding: 0 5em;
+    }
+  }
+
+  form {
+    padding: 2em 0;
+    background-color: #fff;
+    border: 1px solid $MainBackground;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px rgb(211, 211, 211);
+    position: relative;
+
+    .pageviews {
+      display: grid;
+      padding: 0 2em 1em;
+
+      label {
+        padding: 1em 0;
+        color: $Text;
+        font-weight: 600;
+      }
+
+      input[type="range"] {
+        -webkit-appearance: none;
+        width: 100%;
+        background: transparent;
+        margin: 2em 0 0;
+      }
+
+      input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        margin-top: -1em;
+        height: 3em;
+        width: 3em;
+        border-radius: 50%;
+        cursor: pointer;
+        background: url(/images/icon-slider.svg) center no-repeat, $SliderBackround;
+      }
+      input[type="range"]:active::-webkit-slider-thumb {
+        background-color: $FullSliderBar;
+      }
+
+      input[type="range"]::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 7px;
+        cursor: pointer;
+        background: $EmptySliderBar;
+        border-radius: 10px;
+        background-image: linear-gradient(to right, $SliderBackround calc(var(--left) * 1%),transparent 0%);
+      }
+
+
+    }
+
+    .payment {
+      padding: 1em 0;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      align-items: center;
+
+      .amount {
+        font-size: 35px;
+        font-weight: 700;
+        color: $DarkDesaturatedBlueTextCTABackground;
+      }
+
+      .per__month {
+        font-size: 16px;
+        font-weight: 500;
+        color: $Text;
+      }
+    }
+
+    .toggle__section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      padding: 2em 0;
+
+      label {
+        cursor: pointer;
+      }
+
+      span {
+        color: $Text;
+        font-size: 15px;
+      }
+
+      #check {
+        display: none;
+      }
+
+      .toggle {
+        width: 4em;
+        height: 2em;
+        border-radius: 20px;
+        padding: .5em;
+        background-color: lightgrey;
+        cursor: pointer;
+
+        .toggle__circle {
+          display: block;
+          width: 1.1em;
+          height: 1em;
+          background-color: white;
+          border-radius: 50%;
+        }
+      }
+      .toggle:hover {
+        background-color: $FullSliderBar;
+      }
+
+      #check:checked ~ .toggle > .toggle__circle {
+        transform: translateX(2em);
+      }
+
+      .btn-disabled {
+        background-color: #ff8c664d;
+        color: #ff8c66;
+        padding: .5em 1em;
+        border: none;
+        border-radius: 20px;
+      }
+    }
+
+    .benefits {
+      border-top: 1px solid #d3d3d3;
+      padding-top: 2em;
+
+      p {
+        line-height: 2;
+        color: $Text;
+
+        img {
+          margin-right: .8em;
+          width: 14px;
+        }
+      }
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 3em;
+      padding: 1.2em 3.5em;
+      border: none;
+      border-radius: 2em;
+      background-color: $DarkDesaturatedBlueTextCTABackground;
+      color: $Text;
+      font-size: 1em;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .btn:hover {
+      color: #fff;
+    }
+  }
+
+
+}
+
+@media screen and (min-width: 1100px) {
+
+  .main-container {
+    display: grid;
+    place-content: center;
+    padding: 5em 1em;
+    text-align: center;
+    background-image: url(../images/pattern-circles.svg);
+    background-repeat: no-repeat;
+    background-position: center 50px;
+    
+  
+    header {
+      min-height: 30vh;
+  
+      h1 {
+        padding: 0 0 1em;
+        font-size: 28px;
+      }
+  
+      p {
+        padding: 0 5em;
+      }
+    }
+  
+    form {
+      padding: 2em 0;
+      background-color: #fff;
+      border: 1px solid $MainBackground;
+      border-radius: 10px;
+      box-shadow: 1px 1px 10px rgb(211, 211, 211);
+      position: relative;
+  
+      .pageviews {
+        display: grid;
+        padding: 0 2em 1em;
+  
+        label {
+          padding: 1em 0;
+          color: $Text;
+          font-weight: 600;
+          text-align: start;
+        }
+  
+        input[type="range"] {
+          -webkit-appearance: none;
+          width: 100%;
+          background: transparent;
+          margin: 2em 0 0;
+        }
+  
+        input[type="range"]::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          margin-top: -1em;
+          height: 3em;
+          width: 3em;
+          border-radius: 50%;
+          cursor: pointer;
+          background: url(../images/icon-slider.svg) center no-repeat, $SliderBackround;
+        }
+        input[type="range"]:active::-webkit-slider-thumb {
+          background-color: $FullSliderBar;
+        }
+  
+        input[type="range"]::-webkit-slider-runnable-track {
+          width: 100%;
+          height: 7px;
+          cursor: pointer;
+          background: $EmptySliderBar;
+          border-radius: 10px;
+          background-image: linear-gradient(to right, $SliderBackround calc(var(--left) * 1%),transparent 0%);
+        }
+  
+  
+      }
+  
+      .payment {
+        padding: 1em 0;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        align-items: center;
+        position: absolute;
+        top: 20px;
+        right: 30px;
+  
+        .amount {
+          font-size: 35px;
+          font-weight: 700;
+          color: $DarkDesaturatedBlueTextCTABackground;
+        }
+  
+        .per__month {
+          font-size: 16px;
+          font-weight: 500;
+          color: $Text;
+        }
+      }
+  
+      .toggle__section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        padding: 2em 0;
+  
+        label {
+          cursor: pointer;
+        }
+  
+        span {
+          color: $Text;
+          font-size: 18px;
+        }
+  
+        #check {
+          display: none;
+        }
+  
+        .toggle {
+          width: 4.5em;
+          height: 2em;
+          border-radius: 20px;
+          padding: .5em;
+          background-color: lightgrey;
+          cursor: pointer;
+  
+          .toggle__circle {
+            display: block;
+            width: 1.1em;
+            height: 1em;
+            background-color: white;
+            border-radius: 50%;
+          }
+        }
+        .toggle:hover {
+          background-color: $FullSliderBar;
+        }
+  
+        #check:checked ~ .toggle > .toggle__circle {
+          transform: translateX(2em);
+        }
+  
+        .btn-disabled {
+          background-color: #ff8c664d;
+          color: #ff8c66;
+          padding: .5em 1em;
+          border: none;
+          border-radius: 20px;
+        }
+      }
+  
+      .benefits {
+        border-top: 1px solid #d3d3d3;
+        padding-top: 2em;
+        text-align: start;
+        padding-left: 2em;
+  
+        p {
+          line-height: 2;
+          color: $Text;
+  
+          img {
+            margin-right: .8em;
+            width: 14px;
+          }
+        }
+      }
+  
+      .btn {
+        display: inline-block;
+        margin-top: 3em;
+        padding: 1.2em 3.5em;
+        border: none;
+        border-radius: 2em;
+        background-color: $DarkDesaturatedBlueTextCTABackground;
+        color: $Text;
+        font-size: 1em;
+        font-weight: 600;
+        cursor: pointer;
+        position: absolute;
+        bottom: 50px;
+      }
+    }
+  
+  
+  }
+}
+
