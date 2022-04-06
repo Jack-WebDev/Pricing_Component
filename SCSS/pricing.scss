@@ -21,7 +21,7 @@ $left: 50%;
 }
 
 body {
-  background: url(/images/bg-pattern.svg) no-repeat;
+  background: url(../images/bg-pattern.svg) no-repeat;
 }
 
 form {
@@ -83,7 +83,7 @@ form {
         width: 3em;
         border-radius: 50%;
         cursor: pointer;
-        background: url(/images/icon-slider.svg) center no-repeat, $SliderBackround;
+        background: url(../images/icon-slider.svg) center no-repeat, $SliderBackround;
       }
       input[type="range"]:active::-webkit-slider-thumb {
         background-color: $FullSliderBar;

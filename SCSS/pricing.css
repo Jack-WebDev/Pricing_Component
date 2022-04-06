@@ -6,7 +6,7 @@
 }
 
 body {
-  background: url(/images/bg-pattern.svg) no-repeat;
+  background: url(../images/bg-pattern.svg) no-repeat;
 }
 
 form {
@@ -62,7 +62,7 @@ form {
   width: 3em;
   border-radius: 50%;
   cursor: pointer;
-  background: url(/images/icon-slider.svg) center no-repeat, #10d5c2;
+  background: url(../images/icon-slider.svg) center no-repeat, #10d5c2;
 }
 .main-container form .pageviews input[type=range]:active::-webkit-slider-thumb {
   background-color: #a5f3eb;
